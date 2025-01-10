@@ -1,21 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des taches</title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <h2>Bienvenue à l'application To-do List</h2>
-        <input type="text" id="task" placeholder="Ajouter une tache">
-        <button onclick="addTask()">Ajouter</button>
-        <h3>La liste des Taches:</h3>
-        <ul id="task-list">
+    
+    <div class="input-section"> 
+        <h1>Application To-Do List</h1> 
+        <input type="text" id="task-input" placeholder="Ajouter une tâche"> 
+        <input type="date" id="date-input"> 
+        <select id="category-input"> 
+            <option value="" disabled selected>Choisir une catégorie</option> 
+            <option value="travail">Travail</option> 
+            <option value="personnel">Personnel</option> 
+            <option value="autre">Autre</option> 
+        </select>
+        <select id="priority-input"> 
+            <option value="basse">Basse</option> 
+            <option value="moyenne">Moyenne</option> 
+            <option value="haute">Haute</option> 
+           </select>
+           <h1>Gestionnaire de Tâches</h1>
+           
+           <ul id="task-list"></ul>
 
-        </ul>
-    </div>
-    <script src="script.js"></script>
+                <input type="text" id="search-input" placeholder="Rechercher une tâche">
+                <button id="searchTask">Rechercher</button> 
+                <button onclick="filterTasks('completed')">Tâche terminée</button> 
+                 <button onclick="filterTasks('ongoing')">Tâche en cours</button> 
+                 <ul id="task-list">
+                 </ul> 
+</div>
 </body>
+    <script src="script.js"></script>
+
 </html>
